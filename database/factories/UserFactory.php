@@ -23,12 +23,18 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $languages = Language::where('is_active', true)->pluck('id')->toArray();
+        $name = $this->faker->unique()->name();
         return [
-            'name' => fake()->name(),
+            'language_id' => $this->faker->randomElement($languages),
+            'name' => $name,
+            'slug' => Str::slug($name),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 
