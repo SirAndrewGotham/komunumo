@@ -35,7 +35,7 @@
                         <li class="flex flex-col justify-center w-20 gap-1 p-2">
                             {{--                        <x-avatar src="https://source.unsplash.com/500x500?face" class="h-14 w-14" />--}}
 {{--                            <x-avatar src="https://ui-avatars.com/api/?name={{ $name = fake()->name() }}" story class="h-14 w-14"/>--}}
-                            <x-avatar story class="h-14 w-14"/>
+                            <x-avatar story class="h-14 w-14" src="{{ asset('assets/frontend/default/avatars/admin.jpg') }}" />
                             <p class="text-xs font-medium truncate">{{ fake()->name() }}</p>
                         </li>
                     @endfor
@@ -52,7 +52,7 @@
         <aside class="lg:col-span-4 hidden lg:block p-4">
             <div class="flex items-center gap-2">
                 {{--                <x-avatar src="https://source.unsplash.com/500x500?face" class="w-12 h-12" />--}}
-                <x-avatar class="w-12 h-12"/>
+                <x-avatar src="{{ asset('assets/frontend/default/avatars/admin.jpg') }}" class="w-12 h-12"/>
                 <h4 class="font-medium">{{fake()->name}} </h4>
             </div>
 
@@ -63,7 +63,7 @@
                     @for ($i = 0; $i < 5; $i++)
                         <li class="flex items-center gap-3">
                             {{--                            <x-avatar src="https://source.unsplash.com/500x500?face-{{$i}}" class="w-12 h-12" />--}}
-                            <x-avatar class="w-12 h-12"/>
+                            <x-avatar src="{{ asset('assets/frontend/default/avatars/admin.jpg') }}" class="w-12 h-12"/>
                             <div class="grid grid-cols-7 w-full gap-2">
                                 <div class="col-span-5">
                                     <h5 class="font-semibold truncate text-sm">{{fake()->name}}</h5>

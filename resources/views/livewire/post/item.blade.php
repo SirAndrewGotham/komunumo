@@ -1,7 +1,7 @@
 <div class="max-w-lg mx-auto">
     {{-- header --}}
     <header class="flex items-center gap-3">
-        <x-avatar class="h-9 w-9"/>
+        <x-avatar src="{{ asset('assets/frontend/default/avatars/admin.jpg') }}" class="h-9 w-9"/>
         <div class="grid grid-cols-7 w-full gap-2">
             <div class="col-span-5">
                 <h5 class="font-semibold trancate text-sm">{{ fake()->name() }}</h5>
