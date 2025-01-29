@@ -34,11 +34,17 @@
                     @for($i=0;$i<10;$i++)
                         <li class="flex flex-col justify-center w-20 gap-1 p-2">
                             {{--                        <x-avatar src="https://source.unsplash.com/500x500?face" class="h-14 w-14" />--}}
+{{--                            <x-avatar src="https://ui-avatars.com/api/?name={{ $name = fake()->name() }}" story class="h-14 w-14"/>--}}
                             <x-avatar story class="h-14 w-14"/>
                             <p class="text-xs font-medium truncate">{{ fake()->name() }}</p>
                         </li>
                     @endfor
                 </ul>
+            </section>
+
+            {{-- posts --}}
+            <section class="mt-5 space-y-5 p-2">
+                <livewire:post.item />
             </section>
         </aside>
 
