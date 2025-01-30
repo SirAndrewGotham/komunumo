@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,6 +24,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LanguageSeeder::class,
             UserSeeder::class,
+        ]);
+
+        Post::factory()->count(rand(3,50))->create([
+            'type' => 'reel'
+        ]);
+        Post::factory()->count(rand(3,50))->create([
+            'type' => 'post'
         ]);
     }
 }

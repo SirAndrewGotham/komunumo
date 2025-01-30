@@ -17,9 +17,9 @@
     {{--            </svg>--}}
                 {{ file_get_contents(public_path('assets/frontend/default/images/site-logo-light.svg')) }}
             </div>
-            <div class="align-middle flex flex-row items-center h-[64px] px-4">
+            <div class="align-middle flex flex-row items-center h-[64px]">
                 <img x-cloak x-show="!(shrink ||drawer)" src="{{ asset('assets/frontend/default/images/site-logo-light.png') }}"  class="text-black" width="64px" alt="Komunumo Logo" />
-                <span class="ml-4 font-bold text-lg">
+                <span class="font-medium tracking-tighter text-xl ml-1">
                     Komunumo
                 </span>
             </div>

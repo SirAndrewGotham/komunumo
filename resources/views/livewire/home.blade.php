@@ -3,8 +3,11 @@
     {{--Header----}}
     <header class="md:hidden sticky top-0 bg-white">
         <div class="grid grid-cols-12 gap-2 items-center">
-            <div class="col-span-3">
-                <img src="{{asset('assets/frontend/default/images/logo.png')}}" class="h-12 max-w-lg w-full" alt="logo">
+            <div class="col-span-3 max-w-lg w-full">
+                <span class="flex flex-row items-center">
+                    <img src="{{asset('assets/frontend/default/images/site-logo-light.png')}}" class="h-12" alt="Komunumo logo">
+                    <span class="text-sm font-medium tracking-tighter">Komunumo</span>
+                </span>
             </div>
             <div class="col-span-8 flex justify-center px-2">
                 <input type="text" placeholder="{{ __('Search') }}"
@@ -33,8 +36,6 @@
                 <ul class="flex overflow-x-auto scrollbar-hide items-center gap-2">
                     @for($i=0;$i<10;$i++)
                         <li class="flex flex-col justify-center w-20 gap-1 p-2">
-                            {{--                        <x-avatar src="https://source.unsplash.com/500x500?face" class="h-14 w-14" />--}}
-{{--                            <x-avatar src="https://ui-avatars.com/api/?name={{ $name = fake()->name() }}" story class="h-14 w-14"/>--}}
                             <x-avatar story class="h-14 w-14" src="{{ asset('assets/frontend/default/avatars/admin.jpg') }}" />
                             <p class="text-xs font-medium truncate">{{ fake()->name() }}</p>
                         </li>
@@ -44,7 +45,15 @@
 
             {{-- posts --}}
             <section class="mt-5 space-y-5 p-2">
-                <livewire:post.item />
+                @if($posts)
+                    @foreach($posts->take(10) as $post)
+                        <livewire:post.item wire:key="post-{{$post->id}}" :post="$post" />
+                    @endforeach
+                @else
+                    <p class="font-bold flex justify-center">
+                        {{ __('No posts') }}
+                    </p>
+                @endif
             </section>
         </aside>
 
